@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chá de Bebê do Murilo</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="cloud cloud-1"></div>
+    <div class="cloud cloud-2"></div>
+    <div class="cloud cloud-3"></div>
+    <div class="cloud cloud-4"></div>
+
+    <div class="container">
+        <header>
+            <div class="top-banner">
+                <h1 class="banner-title-main">Chá do Murilo</h1>
+                <div class="rocket-trail-container">
+                    <div class="smoke-cloud">
+                        <span class="smoke-puff puff1"></span>
+                        <span class="smoke-puff puff2"></span>
+                        <span class="smoke-puff puff3"></span>
+                        <span class="smoke-name">Murilo</span>
+                    </div>
+                    <i class="fa-solid fa-rocket rocket-icon"></i>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#home" class="active">HOME</a></li>
+                    <li><a href="#confirmacao-presenca">CONFIRME SUA PRESENÇA</a></li>
+                    <li><a href="#lista-presentes">ESCOLHA SEU PRESENTE</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="content-card">
+            <div class="hero-image-container">
+                <img src="murilo.png" alt="Foto do Casal" class="family-photo">
+                <div class="weeks-cloud">
+                    <span class="weeks-text">Mamãe está de</span>
+                    <span class="weeks-number">19</span>
+                    <span class="weeks-text">semanas</span>
+                </div>
+            </div>
+            
+            <div class="main-content">
+                <section id="home" class="content-section active">
+                    <h2>Sejam bem-vindos!</h2>
+                    <p>Com muita alegria, estamos preparando a chegada do nosso pequeno Murilo. Sua presença é o nosso maior presente!</p>
+                    <p>Para continuar, confirme sua presença e veja nossa lista de presentes.</p>
+                </section>
+                <section id="confirmacao-presenca" class="content-section">
+                    <h2>Confirmação de Presença</h2>
+                    <p>Por favor, preencha os campos abaixo.</p>
+                    <form id="rsvp-form">
+                        <div>
+                            <label for="nome-convidado">Seu nome completo:</label>
+                            <input type="text" id="nome-convidado" name="nome-convidado" placeholder="Digite seu nome aqui" required>
+                        </div>
+                        <div>
+                            <label for="nome-acompanhante">Nome do acompanhante (se houver):</label>
+                            <input type="text" id="nome-acompanhante" name="nome-acompanhante" placeholder="Digite o nome do acompanhante">
+                        </div>
+                        <button type="submit">Confirmar e Ir para os Presentes</button>
+                    </form>
+                </section>
+                <section id="lista-presentes" class="content-section">
+                    <h2>Escolha seu Presente</h2>
+                    <p>Sua presença é o maior presente! Mas, se desejar nos presentear, aqui estão algumas sugestões com carinho.</p>
+                    <div id="gift-container"></div>
+                </section>
+            </div>
+        </main>
+        
+        <footer id="evento">
+            <h2><i class="fa-solid fa-map-location-dot"></i> Detalhes do Evento</h2>
+            <p><strong>Data:</strong> Sábado, 20 de Dezembro de 2025</p>
+            <p><strong>Horário:</strong> 16:00</p>
+            <p><strong>Local:</strong> Salão de Festas Vila Feliz</p>
+            <p class="address-text">Rua das Flores, 123 - Bairro Jardim - Cidade/Estado</p>
+            <a href="https://www.google.com/maps/search/?api=1&query=Rua+das+Flores,123,Cidade" target="_blank" class="map-button">
+                <i class="fa-solid fa-map-pin"></i> Ver no Mapa
+            </a>
+        </footer>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
