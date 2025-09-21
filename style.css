@@ -65,7 +65,8 @@ body {
         width: 110%;       /* 🔥 aumenta um pouco a largura */
         height: 110vh;
         margin-left: -6%;  /* centraliza a imagem depois do aumento */
-            overflow: hidden; /* 🔥 impede rolagem da página */
+        overflow: hidden; /* 🔥 impede rolagem da página */
+        object-fit: cover; /* no mobile, cobre a tela melhor */ 
     }
 
     .btn {
