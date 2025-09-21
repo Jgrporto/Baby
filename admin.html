@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Controle - Chá de Bebê</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #5C503F;
+            margin-bottom: 20px;
+        }
+        .actions {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .btn-export {
+            background-color: #E1D5BF;
+            color: #5C503F;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn-export:hover {
+            background-color: #C9BBA5;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f8f8f8;
+            font-weight: 600;
+        }
+        tbody tr:nth-child(even) {
+            background-color: #fdfaf5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fa-solid fa-clipboard-list"></i> Lista de Convidados</h1>
+        <div class="actions">
+            <button id="export-btn" class="btn-export">
+                <i class="fa-solid fa-file-csv"></i> Exportar para Excel (CSV)
+            </button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome do Convidado</th>
+                    <th>Acompanhantes</th>
+                    <th>Nº de Crianças</th>
+                    <th>Presente Escolhido</th>
+                    <th>Data da Confirmação</th>
+                </tr>
+            </thead>
+            <tbody id="guest-list-body">
+                <tr>
+                    <td colspan="5" style="text-align:center;">Carregando lista de convidados...</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
