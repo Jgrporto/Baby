@@ -22,6 +22,10 @@ body {
     overflow: hidden; /* 🔥 impede rolagem da página */
 }
 
+.backgrounde{
+    display: none;
+}
+
 .convite {
     position: relative;
     width: 100%;        /* ocupa toda largura da tela */
@@ -66,7 +70,7 @@ body {
         height: 110vh;
         margin-left: -6%;  /* centraliza a imagem depois do aumento */
         overflow: hidden; /* 🔥 impede rolagem da página */
-        object-fit: cover; /* no mobile, cobre a tela melhor */ 
+        object-fit: cover; /* no mobile, cobre a tela melhor */
     }
 
     .btn {
@@ -91,9 +95,22 @@ body {
 .btn:active { transform: translate(-50%, 0); }
 
 body {
-    overflow: hidden; /* 🔥 impede rolagem da página */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     zoom: 0.8;
-    background-color: white;
+
+    /* 🎨 degradê suave combinando */
+background: linear-gradient(
+    180deg,
+    rgba(242,247,251,0.95) 0%,
+    rgba(253,250,245,0.9) 50%,
+    rgba(227,216,197,0.85) 100%
+);
+
+    font-family: "Montserrat", sans-serif;
+    overflow: hidden; /* 🔥 impede rolagem da página */
 }
 }
 
@@ -170,5 +187,4 @@ body {
 
 /* Agradecimento */
 .thank-you-content { text-align: center; }
-
 .thank-you-content .fa-heart { color: var(--btn-bg); font-size: 4rem; margin-bottom: 20px; }
