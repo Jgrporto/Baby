@@ -1,83 +1,58 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Montserrat:wght@400;600&display=swap');
-
+/* --- ESTILOS GERAIS E DO CONVITE --- */
 :root {
-    --cor-fundo: #fbf9f4;
-    --cor-bege-destaque: #E1D5BF;
-    --cor-bege-hover: #C9BBA5;
-    --cor-texto: #736551;
-    --cor-titulos: #5C503F;
-    --sombra-suave: 0 4px 15px rgba(0, 0, 0, 0.08);
-    --fonte-destaque: 'Lora', serif;
-    --fonte-corpo: 'Montserrat', sans-serif;
+    --btn-bg: #2f6f8a;
+    --btn-hover: #245667;
 }
 
-/* --- RESET & BASE --- */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: var(--fonte-corpo); background-color: var(--cor-fundo); color: var(--cor-texto); line-height: 1.6; overflow-x: hidden; }
-h2 { font-family: var(--fonte-destaque); margin-bottom: 20px; color: var(--cor-titulos); text-align: center; }
-p { margin-bottom: 15px; }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-/* --- NUVENS DE FUNDO --- */
-.cloud { position: absolute; background: white; border-radius: 100px; opacity: 0.8; box-shadow: 0 5px 15px rgba(0,0,0,0.05); animation: float 60s linear infinite alternate; }
-.cloud::before, .cloud::after { content: ''; position: absolute; background: white; width: 100px; height: 80px; border-radius: 50%; top: -40px; left: 25px; }
-.cloud::after { width: 120px; height: 60px; top: -30px; left: auto; right: 15px; }
-.cloud-1 { width: 120px; height: 60px; top: 8%; left: -150px; animation-duration: 80s; }
-.cloud-2 { width: 150px; height: 70px; top: 25%; left: -200px; animation-duration: 100s; }
-.cloud-3 { width: 100px; height: 50px; top: 40%; left: -100px; animation-duration: 70s; }
-.cloud-4 { width: 180px; height: 90px; top: 60%; left: -250px; animation-duration: 90s; }
-@keyframes float { from { transform: translateX(0); } to { transform: translateX(110vw); } }
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f2f7fb;
+    font-family: "Montserrat", sans-serif;
+}
 
-/* --- CONTAINER GERAL --- */
-.container { max-width: 980px; margin: 30px auto; padding: 20px; position: relative; z-index: 1; }
+.convite {
+    position: relative;
+    width: 420px;
+    max-width: 94vw;
+}
 
-/* --- CABEÇALHO --- */
-.header-visual { text-align: center; }
-.top-banner { display: flex; flex-direction: column; align-items: center; gap: 15px; margin-bottom: 30px; }
-.banner-title-main { font-family: var(--fonte-destaque); font-size: 2.5rem; color: var(--cor-titulos); }
-.rocket-trail-container { display: flex; align-items: center; justify-content: center; width: 100%; min-height: 80px; }
-.rocket-icon { font-size: 50px; color: var(--cor-titulos); transform: rotate(45deg); margin-left: 20px; }
-.smoke-cloud { position: relative; display: flex; align-items: center; justify-content: center; }
-.smoke-name { font-family: var(--fonte-destaque); font-size: 2.5rem; color: var(--cor-titulos); position: relative; z-index: 10; }
-.smoke-puff { position: absolute; background-color: white; border-radius: 50%; opacity: 0; filter: blur(8px); animation: smoke-drift 4s ease-out infinite; }
-.puff1 { width: 100px; height: 80px; top: -30px; left: -40px; animation-delay: 0s; }
-.puff2 { width: 120px; height: 80px; top: -10px; right: -60px; animation-delay: 1s; }
-.puff3 { width: 80px; height: 80px; bottom: -40px; left: 10px; animation-delay: 2s; }
-@keyframes smoke-drift { 0% { transform: scale(0.6) translateX(0); opacity: 0.9; } 100% { transform: scale(1.8) translateX(-60px); opacity: 0; } }
+.convite img {
+    width: 100%;
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
 
-/* --- BOTÃO PRINCIPAL DE AÇÃO --- */
-.call-to-action { margin-top: 20px; }
-.btn-principal {
-    background-color: var(--cor-bege-destaque);
-    color: var(--cor-titulos);
-    font-family: var(--fonte-corpo);
-    font-weight: 600;
-    font-size: 1.2rem;
-    padding: 18px 40px;
-    border: none;
-    border-radius: 50px;
+.btn {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    appearance: none;
+    border: 0;
+    background: var(--btn-bg);
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: var(--sombra-suave);
-    text-transform: uppercase;
+    font-size: 16px;
+    box-shadow: 0 6px 18px rgba(47, 111, 138, 0.18);
+    transition: transform 0.12s ease, background-color 0.12s ease, box-shadow 0.12s ease;
 }
-.btn-principal:hover { background-color: var(--cor-bege-hover); }
+.btn:hover { background: var(--btn-hover); transform: translate(-50%, -2px); box-shadow: 0 10px 22px rgba(36, 86, 103, 0.18); }
+.btn:active { transform: translate(-50%, 0); }
 
-/* --- CARD CENTRAL E IMAGEM --- */
-.content-card { background: #fff; border-radius: 10px; padding: 20px; margin-top: 30px; box-shadow: var(--sombra-suave); }
-.hero-image-container { position: relative; }
-.family-photo { width: 100%; border-radius: 10px; display: block; }
-.weeks-cloud { position: absolute; bottom: 20px; right: -15px; z-index: 10; width: 200px; height: 70px; background: var(--cor-bege-destaque); border-radius: 100px; color: var(--cor-titulos); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
-.weeks-cloud::before, .weeks-cloud::after { content: ''; position: absolute; background: var(--cor-bege-destaque); z-index: -1; width: 100px; height: 80px; border-radius: 50%; top: -35px; left: 25px; }
-.weeks-cloud::after { width: 120px; height: 60px; top: auto; bottom: -25px; left: auto; right: 15px; }
-.weeks-text { font-size: 12px; line-height: 1; text-transform: uppercase; font-weight: 600; }
-.weeks-number { font-family: var(--fonte-destaque); font-size: 28px; line-height: 1.1; font-weight: bold; }
-.main-content { text-align: center; padding-top: 20px; }
-
-/* --- CARD DO EVENTO (FOOTER) --- */
-footer#evento { text-align: center; margin-top: 40px; background: #fff; color: var(--cor-texto); padding: 30px; border-radius: 10px; box-shadow: var(--sombra-suave); border-top: 5px solid var(--cor-bege-destaque); }
-footer#evento h2 { color: var(--cor-titulos); margin-bottom: 15px; font-size: 2rem; }
-.map-button { display: inline-block; background: var(--cor-bege-destaque); color: var(--cor-titulos); padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1rem; transition: transform 0.2s ease; }
-.map-button:hover { transform: scale(1.05); }
 
 /* --- ESTILOS DO MODAL (POP-UP) --- */
 .modal-overlay {
@@ -86,141 +61,70 @@ footer#evento h2 { color: var(--cor-titulos); margin-bottom: 15px; font-size: 2r
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(92, 80, 63, 0.7);
-    display: flex;
+    background: rgba(0, 0, 0, 0.7);
+    display: none; /* JS vai mudar para 'flex' */
     align-items: center;
     justify-content: center;
     z-index: 1000;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.4s ease, visibility 0s 0.4s;
 }
 .modal-overlay.visible {
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.4s ease;
+    display: flex;
 }
+
 .modal-content {
-    background-color: var(--cor-fundo);
-    padding: 30px 40px;
-    border-radius: 10px;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 15px;
+    max-width: 550px;
     width: 90%;
-    max-width: 800px;
+    position: relative;
     max-height: 90vh;
     overflow-y: auto;
-    position: relative;
-    transform: translateY(20px);
-    transition: transform 0.4s ease;
+    font-family: 'Lora', serif;
 }
-.modal-overlay.visible .modal-content {
-    transform: translateY(0);
-}
+.modal-content h2 { font-family: 'Montserrat', sans-serif; text-align: center; color: var(--btn-bg); margin-bottom: 20px; }
 .modal-close {
     position: absolute;
-    top: 15px;
-    right: 20px;
-    background: none;
+    top: 10px;
+    right: 15px;
+    background: transparent;
     border: none;
-    font-size: 2.5rem;
+    font-size: 2rem;
+    cursor: pointer;
     color: #aaa;
-    cursor: pointer;
-    line-height: 1;
 }
-.modal-close:hover { color: var(--cor-titulos); }
 .modal-step { display: none; }
-.modal-step.active { display: block; animation: fadeIn 0.5s ease; }
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+.modal-step.active { display: block; }
 
-/* Formulário dentro do Modal */
-#secao-confirmacao { display: none; } /* Controlado pelo JS no Modal */
-#rsvp-form h2 { margin-bottom: 25px; }
+/* Formulário */
 .campo-form { margin-bottom: 20px; }
-.campo-form label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--cor-titulos); }
-.campo-form input { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; }
-.botoes-opcionais { margin-bottom: 20px; }
-.btn-adicionar { background: #f0f0f0; border: 1px dashed #ccc; color: var(--cor-texto); padding: 10px 15px; border-radius: 8px; cursor: pointer; margin-right: 10px; font-size: 0.9rem; }
-.btn-adicionar:hover { background: #e0e0e0; }
-.btn-adicionar .fa-solid { margin-right: 8px; }
-.campo-acompanhante, .campo-criancas { display: none; }
+.campo-form label { display: block; margin-bottom: 8px; font-weight: 600; color: #555; }
+.campo-form input[type="text"] { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; font-family: 'Lora', serif; }
+.botoes-opcionais { display: flex; gap: 10px; margin-bottom: 20px; }
+.btn-adicionar { background: #f0f0f0; border: 1px solid #ddd; padding: 10px; border-radius: 8px; cursor: pointer; flex-grow: 1; }
+.acompanhante-dinamico { border-top: 1px dashed #ccc; padding-top: 15px; }
+.acompanhante-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.btn-remover { background: #ffdddd; border: 1px solid #ffb8b8; color: #c53030; border-radius: 5px; cursor: pointer; padding: 2px 8px; }
+.campo-criancas { display: none; }
+.contador { display: flex; align-items: center; justify-content: center; gap: 15px; }
+.btn-contador { width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--btn-bg); background: white; color: var(--btn-bg); font-size: 1.2rem; cursor: pointer; }
 
-/* ESTILOS PARA ACOMPANHANTES DINÂMICOS */
-.acompanhante-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 8px;
+/* Botão Principal do Modal */
+.btn-principal {
+    display: block; width: 100%; background: var(--btn-bg); color: white; border: none; padding: 15px; border-radius: 8px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: background-color 0.2s;
 }
-.acompanhante-header label {
-    margin-bottom: 0;
-}
-.btn-remover {
-    background: none;
-    border: none;
-    color: #cc5a5a;
-    font-size: 0.9rem;
-    cursor: pointer;
-    padding: 5px;
-}
-.btn-remover:hover { text-decoration: underline; }
+.btn-principal:hover { background: var(--btn-hover); }
 
-/* ESTILO PARA O CONTADOR DE CRIANÇAS */
-.contador {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-}
-.btn-contador {
-    background-color: var(--cor-bege-destaque);
-    color: var(--cor-titulos);
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    font-size: 1.5rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-.btn-contador:hover { background-color: var(--cor-bege-hover); }
-#qtd-criancas {
-    font-size: 1.5rem;
-    font-weight: bold;
-    min-width: 30px;
-    text-align: center;
-}
-
-/* Lista de Presentes dentro do Modal */
-#secao-presentes { display: none; } /* Controlado pelo JS no Modal */
-#gift-container { max-height: 50vh; overflow-y: auto; padding-right: 15px; display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 30px; margin-top: 30px; }
-.item-presente { background-color: #fff; border-radius: 10px; box-shadow: var(--sombra-suave); text-align: center; overflow: hidden; }
+/* Lista de Presentes */
+#gift-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
+.item-presente { border: 1px solid #eee; border-radius: 8px; text-align: center; overflow: hidden; }
 .item-presente.esgotado { opacity: 0.5; }
-.gift-image { width: 100%; height: 200px; object-fit: cover; }
-.gift-info { padding: 20px; }
-.gift-info h3 { font-size: 1.3rem; margin-bottom: 10px; color: var(--cor-titulos); }
-.gift-info p { margin-bottom: 20px; }
-.btn-presentear { width: 100%; background-color: var(--cor-bege-destaque); color: var(--cor-titulos); font-size: 1rem; padding: 12px; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; transition: background-color 0.3s ease; }
-.btn-presentear:hover { background-color: var(--cor-bege-hover); }
-.item-presente.esgotado .btn-presentear { background-color: #ccc; cursor: not-allowed; }
+.gift-image { width: 100%; height: 120px; object-fit: cover; }
+.gift-info { padding: 15px; }
+.gift-info h3 { font-size: 1rem; margin: 0 0 10px; }
+.btn-presentear { background: var(--btn-bg); color: #fff; border: none; padding: 8px 12px; border-radius: 5px; cursor: pointer; }
+.btn-presentear:disabled { background: #ccc; }
 
-/* Tela de Agradecimento */
-.thank-you-content { text-align: center; padding: 30px 0; }
-.thank-you-content .fa-heart { font-size: 3rem; color: var(--cor-bege-destaque); margin-bottom: 20px; }
-.thank-you-content p { font-size: 1.2rem; }
-
-/* --- RESPONSIVIDADE --- */
-@media (max-width: 768px) {
-    .top-banner { gap: 10px; }
-    .banner-title-main { font-size: 2rem; }
-    .rocket-trail-container { flex-direction: column-reverse; gap: 15px; }
-    .smoke-name { font-size: 2rem; }
-    .rocket-icon { margin-left: 0; animation: none; transform: translateY(-10px) rotate(45deg); }
-    .family-photo { max-width: 100%; }
-    .weeks-cloud { width: 150px; height: 55px; font-size: 0.9rem; right: 10px; bottom: 10px; }
-    .weeks-cloud::before { width: 80px; height: 60px; top: -25px; }
-    .weeks-cloud::after { width: 90px; height: 40px; bottom: -20px; }
-    .weeks-number { font-size: 22px; }
-    #gift-container { grid-template-columns: 1fr; }
-
-}
+/* Agradecimento */
+.thank-you-content { text-align: center; }
+.thank-you-content .fa-heart { color: var(--btn-bg); font-size: 4rem; margin-bottom: 20px; }

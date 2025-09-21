@@ -4,70 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chá de Bebê do Murilo</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <div class="cloud cloud-1"></div>
-    <div class="cloud cloud-2"></div>
-    <div class="cloud cloud-3"></div>
-    <div class="cloud cloud-4"></div>
 
-    <div class="container">
-        <header class="header-visual">
-            <div class="top-banner">
-                <h1 class="banner-title-main">Chá do Murilo</h1>
-                <div class="rocket-trail-container">
-                    <div class="smoke-cloud">
-                        <span class="smoke-puff puff1"></span>
-                        <span class="smoke-puff puff2"></span>
-                        <span class="smoke-puff puff3"></span>
-                        <span class="smoke-name">Murilo</span>
-                    </div>
-                    <i class="fa-solid fa-rocket rocket-icon"></i>
-                </div>
-            </div>
-            <div class="call-to-action">
-                <button class="btn-principal" id="btnShowRsvp">Confirmar Presença</button>
-            </div>
-        </header>
-
-        <main>
-            <div class="content-card">
-                <div class="hero-image-container">
-                    <img src="murilo.png" alt="Foto do Casal" class="family-photo">
-                    <div class="weeks-cloud">
-                        <span class="weeks-text">Mamãe está de</span>
-                        <span class="weeks-number">19</span>
-                        <span class="weeks-text">semanas</span>
-                    </div>
-                </div>
-                <div class="main-content">
-                     <h2>Sejam bem-vindos!</h2>
-                    <p>Com muita alegria, estamos preparando a chegada do nosso pequeno Murilo. Sua presença é o nosso maior presente!</p>
-                </div>
-            </div>
-            <footer id="evento">
-                <h2><i class="fa-solid fa-map-location-dot"></i> Detalhes do Evento</h2>
-                <p><strong>Data:</strong> Sábado, 20 de Dezembro de 2025</p>
-                <p><strong>Horário:</strong> 16:00</p>
-                <p><strong>Local:</strong> Salão de Festas Vila Feliz</p>
-                <p class="address-text">Rua das Flores, 123 - Bairro Jardim - Cidade/Estado</p>
-                <a href="https://www.google.com/maps/search/?api=1&query=Rua+das+Flores,123,Cidade" target="_blank" class="map-button">
-                    <i class="fa-solid fa-map-pin"></i> Ver no Mapa
-                </a>
-            </footer>
-        </main>
+    <div class="convite">
+        <img src="imagens/convite-fundo.png" alt="Convite Chá de Bebê - Murilo">
+        <button class="btn" id="btnShowRsvp">CONFIRMAR PRESENÇA</button>
     </div>
 
     <div id="rsvp-modal" class="modal-overlay">
         <div class="modal-content">
             <button class="modal-close" id="modal-close-btn">×</button>
             
-            <div id="modal-step-1" class="modal-step">
+            <div id="modal-step-1" class="modal-step active">
                 <form id="rsvp-form">
                     <h2>Confirmação de Presença</h2>
                     <div class="campo-form">
