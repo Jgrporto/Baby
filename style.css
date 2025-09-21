@@ -67,53 +67,26 @@ body {
 /* --- Mobile Ajustes --- */
 @media (max-width: 600px) {
     .convite img {
-        width: 110%;       /* 🔥 aumenta um pouco a largura */
+        width: 110%;
         height: 110vh;
-        margin-left: -6%;  /* centraliza a imagem depois do aumento */
-        overflow: hidden; /* 🔥 impede rolagem da página */
-        object-fit: cover; /* no mobile, cobre a tela melhor */
+        margin-left: -6%;
+        overflow: hidden;
+        object-fit: cover;
     }
-
     .btn {
-    position: absolute;
-    height: 70px;
-    bottom: 100px; /* 🔥 antes era 20px, subi mais */
-    left: 50%;
-    transform: translateX(-50%);
-    appearance: none;
-    border: 0;
-    background: var(--btn-bg);
-    color: #fff;
-    padding: 12px 20px;
-    border-radius: 10px;
-    font-weight: 700;
-    letter-spacing: 0.6px;
-    cursor: pointer;
-    font-size: 18px;
-    box-shadow: 0 6px 18px rgba(47, 111, 138, 0.18);
-    transition: transform 0.12s ease, background-color 0.12s ease, box-shadow 0.12s ease;
-}
-.btn:hover { background: var(--btn-hover); transform: translate(-50%, -2px); box-shadow: 0 10px 22px rgba(36, 86, 103, 0.18); }
-.btn:active { transform: translate(-50%, 0); }
-
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    zoom: 0.8;
-
-    /* 🎨 degradê suave combinando */
-background: linear-gradient(
-    180deg,
-    rgba(242,247,251,0.95) 0%,
-    rgba(253,250,245,0.9) 50%,
-    rgba(227,216,197,0.85) 100%
-);
-
-    font-family: "Montserrat", sans-serif;
-    overflow: hidden; /* 🔥 impede rolagem da página */
-}
+        height: 70px;
+        bottom: 100px;
+        font-size: 18px;
+    }
+    body {
+        zoom: 0.8;
+    background: linear-gradient(
+        180deg,
+        rgba(250, 244, 233, 0.95) 0%,
+        rgba(247, 236, 216, 0.9) 50%,
+        rgba(240, 225, 200, 0.85) 100%
+    );
+    }
 }
 
 /* --- ESTILOS DO MODAL (POP-UP) --- */
