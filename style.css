@@ -39,9 +39,9 @@ p { margin-bottom: 15px; }
 .smoke-cloud { position: relative; display: flex; align-items: center; justify-content: center; }
 .smoke-name { font-family: var(--fonte-destaque); font-size: 2.5rem; color: var(--cor-titulos); position: relative; z-index: 10; }
 .smoke-puff { position: absolute; background-color: white; border-radius: 50%; opacity: 0; filter: blur(8px); animation: smoke-drift 4s ease-out infinite; }
-.puff1 { width: 100px; height: 100px; top: -30px; left: -40px; animation-delay: 0s; }
-.puff2 { width: 120px; height: 120px; top: -10px; right: -60px; animation-delay: 1s; }
-.puff3 { width: 80px; height: 80px; bottom: -30px; left: 10px; animation-delay: 2s; }
+.puff1 { width: 100px; height: 80px; top: -30px; left: -40px; animation-delay: 0s; }
+.puff2 { width: 120px; height: 80px; top: -10px; right: -60px; animation-delay: 1s; }
+.puff3 { width: 80px; height: 80px; bottom: -40px; left: 10px; animation-delay: 2s; }
 @keyframes smoke-drift { 0% { transform: scale(0.6) translateX(0); opacity: 0.9; } 100% { transform: scale(1.8) translateX(-60px); opacity: 0; } }
 
 /* --- BOTÃO PRINCIPAL DE AÇÃO --- */
@@ -222,4 +222,5 @@ footer#evento h2 { color: var(--cor-titulos); margin-bottom: 15px; font-size: 2r
     .weeks-cloud::after { width: 90px; height: 40px; bottom: -20px; }
     .weeks-number { font-size: 22px; }
     #gift-container { grid-template-columns: 1fr; }
+
 }
