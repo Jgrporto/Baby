@@ -73,6 +73,12 @@ body {
         overflow: hidden;
         object-fit: cover;
     }
+
+        .gift-image {
+        height: auto; /* Remove a altura fixa de 150px */
+        aspect-ratio: 4 / 3; /* Define uma proporção de 4:3 (largura/altura) */
+    }
+    
     .btn {
         height: 70px;
         bottom: 100px;
