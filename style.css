@@ -64,7 +64,6 @@ body {
     .convite img {
         width: 110%;       /* 🔥 aumenta um pouco a largura */
         margin-left: -6%;  /* centraliza a imagem depois do aumento */
-        zoom: 0.8;
             overflow: hidden; /* 🔥 impede rolagem da página */
     }
 
@@ -91,6 +90,7 @@ body {
 
 body {
     overflow: hidden; /* 🔥 impede rolagem da página */
+    zoom: 0.8;
 }
 }
 
