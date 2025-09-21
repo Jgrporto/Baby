@@ -30,11 +30,11 @@ body {
 
 .convite img {
     width: 100%;
-    height: 100vh;      /* ocupa toda a altura da tela */
-    object-fit: cover;  /* ajusta a imagem sem distorcer */
+    height: 105vh;       /* 🔥 aumenta um pouco além da tela */
+    object-fit: contain; /* mostra a imagem inteira sem cortar */
     display: block;
-    border-radius: 0;   /* sem bordas arredondadas */
-    box-shadow: none;   /* sem sombra, fica full */
+    border-radius: 0;
+    box-shadow: none;
 }
 
 
@@ -63,13 +63,14 @@ body {
 @media (max-width: 600px) {
     .convite img {
         width: 110%;       /* 🔥 aumenta um pouco a largura */
+        height: 110vh;
         margin-left: -6%;  /* centraliza a imagem depois do aumento */
             overflow: hidden; /* 🔥 impede rolagem da página */
     }
 
     .btn {
     position: absolute;
-    bottom: 40px; /* 🔥 antes era 20px, subi mais */
+    bottom: 100px; /* 🔥 antes era 20px, subi mais */
     left: 50%;
     transform: translateX(-50%);
     appearance: none;
