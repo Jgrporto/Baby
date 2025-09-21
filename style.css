@@ -93,6 +93,7 @@ body {
 body {
     overflow: hidden; /* 🔥 impede rolagem da página */
     zoom: 0.8;
+    background-color: white;
 }
 }
 
@@ -169,4 +170,5 @@ body {
 
 /* Agradecimento */
 .thank-you-content { text-align: center; }
+
 .thank-you-content .fa-heart { color: var(--btn-bg); font-size: 4rem; margin-bottom: 20px; }
