@@ -1,7 +1,9 @@
 /* --- ESTILOS GERAIS E DO CONVITE --- */
 :root {
-    --btn-bg: #2f6f8a;
-    --btn-hover: #245667;
+    --cor-bege: #D3C5AA;       /* Bege principal */
+    --cor-bege-hover: #bdae95; /* Bege mais escuro */
+    --cor-titulos: #413a30;    /* Marrom escuro para o texto */
+    --cor-fundo-claro: #fdfaf5; /* Fundo branco quente */
 }
 
 * {
@@ -49,8 +51,8 @@ body {
     transform: translateX(-50%);
     appearance: none;
     border: 0;
-    background: var(--btn-bg);
-    color: #fff;
+    background: var(--cor-bege);
+    color: var(--cor-titulos);
     padding: 12px 20px;
     border-radius: 10px;
     font-weight: 700;
@@ -60,9 +62,8 @@ body {
     box-shadow: 0 6px 18px rgba(47, 111, 138, 0.18);
     transition: transform 0.12s ease, background-color 0.12s ease, box-shadow 0.12s ease;
 }
-.btn:hover { background: var(--btn-hover); transform: translate(-50%, -2px); box-shadow: 0 10px 22px rgba(36, 86, 103, 0.18); }
+.btn:hover { background: var(--cor-bege-hover); transform: translate(-50%, -2px); box-shadow: 0 10px 22px rgba(0, 0, 0, 0.15); }
 .btn:active { transform: translate(-50%, 0); }
-
 /* --- Mobile Ajustes --- */
 @media (max-width: 600px) {
     .convite img {
@@ -133,7 +134,7 @@ background: linear-gradient(
 }
 
 .modal-content {
-    background: #fff;
+    background: var(--cor-fundo-claro); /* Usa o fundo branco quente */
     padding: 25px 30px;
     border-radius: 15px;
     max-width: 550px;
@@ -143,7 +144,12 @@ background: linear-gradient(
     overflow-y: auto;
     font-family: 'Lora', serif;
 }
-.modal-content h2 { font-family: 'Montserrat', sans-serif; text-align: center; color: var(--btn-bg); margin-bottom: 20px; }
+.modal-content h2 { 
+    font-family: 'Montserrat', sans-serif; 
+    text-align: center; 
+    color: var(--cor-titulos); /* <-- CORREÇÃO */
+    margin-bottom: 20px; 
+}
 .modal-close {
     position: absolute;
     top: 10px;
@@ -160,7 +166,7 @@ background: linear-gradient(
 /* Formulário */
 .campo-form { margin-bottom: 20px; }
 .campo-form label { display: block; margin-bottom: 8px; font-weight: 600; color: #555; }
-.campo-form input[type="text"] { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; font-family: 'Lora', serif; }
+.campo-form input[type="text"], .campo-form input[type="number"] { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; font-family: 'Lora', serif; }
 .botoes-opcionais { display: flex; gap: 10px; margin-bottom: 20px; }
 .btn-adicionar { background: #f0f0f0; border: 1px solid #ddd; padding: 10px; border-radius: 8px; cursor: pointer; flex-grow: 1; }
 .acompanhante-dinamico { border-top: 1px dashed #ccc; padding-top: 15px; }
@@ -168,13 +174,32 @@ background: linear-gradient(
 .btn-remover { background: #ffdddd; border: 1px solid #ffb8b8; color: #c53030; border-radius: 5px; cursor: pointer; padding: 2px 8px; }
 .campo-criancas { display: none; }
 .contador { display: flex; align-items: center; justify-content: center; gap: 15px; }
-.btn-contador { width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--btn-bg); background: white; color: var(--btn-bg); font-size: 1.2rem; cursor: pointer; }
+.btn-contador { 
+    width: 30px; 
+    height: 30px; 
+    border-radius: 50%; 
+    border: 1px solid var(--cor-bege); /* <-- CORREÇÃO */
+    background: white; 
+    color: var(--cor-titulos); /* <-- CORREÇÃO */
+    font-size: 1.2rem; 
+    cursor: pointer; 
+}
 
 /* Botão Principal do Modal */
 .btn-principal {
-    display: block; width: 100%; background: var(--btn-bg); color: white; border: none; padding: 15px; border-radius: 8px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: background-color 0.2s;
+    display: block; 
+    width: 100%; 
+    background: var(--cor-bege); /* <-- CORREÇÃO */
+    color: var(--cor-titulos);      /* <-- CORREÇÃO */
+    border: none; 
+    padding: 15px; 
+    border-radius: 8px; 
+    font-weight: 700; 
+    font-size: 1rem; 
+    cursor: pointer; 
+    transition: background-color 0.2s;
 }
-.btn-principal:hover { background: var(--btn-hover); }
+.btn-principal:hover { background: var(--cor-bege-hover); }
 
 /* Lista de Presentes */
 #gift-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
@@ -183,9 +208,20 @@ background: linear-gradient(
 .gift-image { width: 100%; height: 120px; object-fit: cover; }
 .gift-info { padding: 15px; }
 .gift-info h3 { font-size: 1rem; margin: 0 0 10px; }
-.btn-presentear { background: var(--btn-bg); color: #fff; border: none; padding: 8px 12px; border-radius: 5px; cursor: pointer; }
+.btn-presentear { 
+    background: var(--cor-bege); /* <-- CORREÇÃO */
+    color: var(--cor-titulos);      /* <-- CORREÇÃO */
+    border: none; 
+    padding: 8px 12px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+}
 .btn-presentear:disabled { background: #ccc; }
 
 /* Agradecimento */
 .thank-you-content { text-align: center; }
-.thank-you-content .fa-heart { color: var(--btn-bg); font-size: 4rem; margin-bottom: 20px; }
+.thank-you-content .fa-heart { 
+    color: var(--cor-bege); /* <-- CORREÇÃO */
+    font-size: 4rem; 
+    margin-bottom: 20px; 
+}
