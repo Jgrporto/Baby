@@ -8,6 +8,8 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    overflow: hidden; /* 🔥 impede rolagem da página */
+    overflow-x: hidden; /* 🔥 impede rolagem da página */
 }
 
 body {
@@ -38,7 +40,7 @@ body {
 
 .btn {
     position: absolute;
-    bottom: 20px;
+    bottom: 150px; /* 🔥 antes era 20px, subi mais */
     left: 50%;
     transform: translateX(-50%);
     appearance: none;
@@ -57,6 +59,40 @@ body {
 .btn:hover { background: var(--btn-hover); transform: translate(-50%, -2px); box-shadow: 0 10px 22px rgba(36, 86, 103, 0.18); }
 .btn:active { transform: translate(-50%, 0); }
 
+/* --- Mobile Ajustes --- */
+@media (max-width: 600px) {
+    .convite img {
+        width: 110%;       /* 🔥 aumenta um pouco a largura */
+        margin-left: -6%;  /* centraliza a imagem depois do aumento */
+        zoom: 0.8;
+            overflow: hidden; /* 🔥 impede rolagem da página */
+    }
+
+    .btn {
+    position: absolute;
+    bottom: 40px; /* 🔥 antes era 20px, subi mais */
+    left: 50%;
+    transform: translateX(-50%);
+    appearance: none;
+    border: 0;
+    background: var(--btn-bg);
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 6px 18px rgba(47, 111, 138, 0.18);
+    transition: transform 0.12s ease, background-color 0.12s ease, box-shadow 0.12s ease;
+}
+.btn:hover { background: var(--btn-hover); transform: translate(-50%, -2px); box-shadow: 0 10px 22px rgba(36, 86, 103, 0.18); }
+.btn:active { transform: translate(-50%, 0); }
+
+body {
+    overflow: hidden; /* 🔥 impede rolagem da página */
+}
+}
 
 /* --- ESTILOS DO MODAL (POP-UP) --- */
 .modal-overlay {
