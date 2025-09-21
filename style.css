@@ -75,6 +75,7 @@ body {
 
     .btn {
     position: absolute;
+    height: 70px;
     bottom: 100px; /* 🔥 antes era 20px, subi mais */
     left: 50%;
     transform: translateX(-50%);
@@ -87,7 +88,7 @@ body {
     font-weight: 700;
     letter-spacing: 0.6px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px;
     box-shadow: 0 6px 18px rgba(47, 111, 138, 0.18);
     transition: transform 0.12s ease, background-color 0.12s ease, box-shadow 0.12s ease;
 }
