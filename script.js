@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // --- LÓGICA DOS PRESENTES ---
     function carregarPresentes() {
-        db.collection('presentes').orderBy('nome').onSnapshot(snapshot => {
+        db.collection('presentes').orderBy('ordem').onSnapshot(snapshot => {
             giftContainer.innerHTML = '';
             snapshot.forEach(doc => {
                 const presente = doc.data();

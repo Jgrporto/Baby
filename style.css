@@ -78,7 +78,7 @@ body {
         height: auto; /* Remove a altura fixa de 150px */
         aspect-ratio: 4 / 3; /* Define uma proporção de 4:3 (largura/altura) */
     }
-    
+
     .btn {
         height: 70px;
         bottom: 100px;
@@ -92,6 +92,33 @@ body {
         rgba(247, 236, 216, 0.9) 50%,
         rgba(240, 225, 200, 0.85) 100%
     );
+    }
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+    .top-banner { gap: 10px; }
+    .banner-title-main { font-size: 2rem; }
+    .rocket-trail-container { flex-direction: column-reverse; gap: 15px; }
+    .smoke-name { font-size: 2rem; }
+    .rocket-icon { margin-left: 0; animation: none; transform: translateY(-10px) rotate(45deg); }
+    .family-photo { max-width: 100%; }
+    .weeks-cloud { width: 150px; height: 55px; font-size: 0.9rem; right: 10px; bottom: 10px; }
+    .weeks-cloud::before { width: 80px; height: 60px; top: -25px; }
+    .weeks-cloud::after { width: 90px; height: 40px; bottom: -20px; }
+    .weeks-number { font-size: 22px; }
+    
+    #gift-container {
+        grid-template-columns: 1fr; /* 1 coluna no mobile */
+        gap: 20px;
+    }
+
+    .item-presente {
+        box-shadow: 0 6px 18px rgba(0,0,0,0.12); /* Sombra mais forte para destacar */
+    }
+
+    .gift-image {
+        height: 200px; /* Imagem um pouco maior no mobile para melhor visualização */
     }
 }
 
@@ -182,12 +209,21 @@ body {
 
 /* Lista de Presentes */
 #gift-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
-.item-presente { border: 1px solid #eee; border-radius: 8px; text-align: center; overflow: hidden; }
+.item-presente {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: var(--sombra-suave);
+    text-align: center;
+    overflow: hidden;
+    border: 1px solid #f0e9dd; /* Borda sutil para mais destaque */
+}
+
 .item-presente.esgotado { opacity: 0.5; }
 .gift-image {
     width: 100%;
-    height: 150px; /* <<<< ALTERADO AQUI (era 200px) */
-    object-fit: cover;
+    height: 150px;
+    object-fit: contain; /* ALTERADO: Garante que a imagem inteira apareça */
+    background-color: #fafafa; /* Fundo caso a imagem seja transparente */
 }
 .gift-info { padding: 15px; }
 .gift-info h3 { font-size: 1rem; margin: 0 0 10px; }
@@ -207,4 +243,16 @@ body {
     color: var(--cor-bege); /* <-- CORREÇÃO */
     font-size: 4rem; 
     margin-bottom: 20px; 
+}
+
+/* --- DESTAQUE PARA A LISTA DE PRESENTES NO MODAL --- */
+#modal-step-2 {
+    background-color: #f3efe7; /* Um tom de off-white/bege bem suave */
+    padding: 25px;
+    margin: -30px -40px; /* Compensa o padding do .modal-content */
+    border-radius: 10px;
+}
+
+#modal-step-2 h2 {
+    margin-top: 10px; /* Adiciona um respiro acima do título */
 }
